@@ -1,0 +1,7 @@
+{
+  "name": "vidz",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

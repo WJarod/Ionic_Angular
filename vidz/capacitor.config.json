@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "vidz",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
