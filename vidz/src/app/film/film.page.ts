@@ -31,17 +31,21 @@ export class FilmPage implements OnInit {
       {
         // comme le result est un objet on cible l'array que l'on veut recup
        this.films = result['items']
-       console.log(this.films)
       });
   }
   searchbar( event )
   {
     // on recup la value de la bar de recherche 
     var value = event.target.value
-    // on fait une condition pour qu'il ne recherhe pas si la value est vide 
-    if (value != '')
+  
+    // cette condition permet que des que le champ de recherche est vide on refresh pour recup la liste de films
+    if (value == '')
     {
-      /**
+      this.filmService.refreshMostPopularFilms();
+    }
+    else
+    {
+       /**
      * On subscribe à l'observable pour recup notre liste de film
      */
       this.filmService.getFilmByTittle(value)
@@ -49,9 +53,8 @@ export class FilmPage implements OnInit {
           {
             // comme le result est un objet on cible l'array que l'on veut recup
             this.films = result['results'] ;
-            console.log(this.films)
           })
-    }
+      }
   }
 
 }

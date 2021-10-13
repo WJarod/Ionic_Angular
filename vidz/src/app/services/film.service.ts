@@ -47,6 +47,18 @@ export class FilmService {
   }
 
   /**
+   * Cette methode a pour but de refresh mon observable 
+   * de la liste de films 
+   */
+
+  refreshMostPopularFilms() : void 
+  {
+    this.http.get<Film[]>(`https://imdb-api.com/fr/API/MostPopularMovies/${this.APIKEYS}`)
+      .toPromise()
+        .then(result => this.filmObservable.next(result));
+  }
+
+  /**
    * on recup la value title qui va nous permettre de faire la request sur le titre que l'on recherche 
    * cette methode va nous return un observable qui contient la liste de films  
    * @param title 
