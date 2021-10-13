@@ -1,9 +1,18 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>film</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-app>
+  <ion-header translucent>
+    <ion-toolbar>
+      <ion-searchbar animated (ionChange)="searchbar($event)"></ion-searchbar>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content fullscreen>
+    
+    <ion-item *ngFor="let film of films" routerLink="/film/detail/{{ film.id }}">
+      <ion-thumbnail slot="start">  
+        <img src="{{ film.image }}">  
+      </ion-thumbnail>  
+      <ion-label>{{ film.title }}</ion-label>  
+    </ion-item>
 
-<ion-content>
+  </ion-content>>
+</ion-app>
 
-</ion-content>

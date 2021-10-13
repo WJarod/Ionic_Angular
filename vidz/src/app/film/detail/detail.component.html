@@ -1,3 +1,22 @@
-<p>
-  detail works!
-</p>
+<ion-app>
+  <ion-header translucent>
+  </ion-header>,
+  <ion-content fullscreen>
+    <ion-card>
+      <img src="{{ film.image }}" />
+      <ion-card-header>
+        <ion-card-subtitle>Genres : {{ film.genres }}</ion-card-subtitle>
+        <ion-card-subtitle>Année : {{ film.year }} // Durée : {{ film.runtimeStr }}</ion-card-subtitle>
+        <ion-card-title>{{ film.title }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        {{ film.plotLocal }}
+      </ion-card-content>
+      <ion-card-content>
+        <ion-card-subtitle>Directeur : {{ film.directors }}</ion-card-subtitle>
+        <ion-card-subtitle>Stars : {{ film.stars }}</ion-card-subtitle>
+        <ion-card-subtitle>Compagnies :  {{ film.companies }}</ion-card-subtitle>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
+</ion-app>
