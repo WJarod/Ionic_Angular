@@ -1,9 +1,21 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>login</ion-title>
+    <ion-title>
+      Vidz
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Vidz</ion-title>
+    </ion-toolbar>
+  </ion-header>
 
+  <div id="container">
+    <strong>Pour commencer connectez-vous</strong>
+    <p>Prèts à rechercher votre film</p>
+    <ion-button expand="block" color="success" routerLink="/film">Connexion</ion-button>
+  </div>
 </ion-content>

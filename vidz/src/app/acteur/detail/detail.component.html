@@ -1,0 +1,31 @@
+
+<ion-app>
+  <ion-header translucent>
+    <ion-toolbar>
+      <ion-title>Acteur</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content fullscreen>
+    <ion-content >
+      <ion-card>
+        <img src="{{ acteur.image }}" />
+        <ion-card-header>
+          <ion-card-subtitle>Date de naissance : {{ acteur.birthDate }}</ion-card-subtitle>
+          <ion-card-title>{{ acteur.title }}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          {{ acteur.summary }}
+        </ion-card-content>
+        <ion-card-content>
+          <ion-item *ngFor="let film of films" routerLink="/film/detail/{{ film.id }}">
+            <ion-thumbnail slot="start">  
+              <img src="{{ film.image }}">  
+            </ion-thumbnail>  
+            <ion-label>{{ film.title }}</ion-label>  
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
+    </ion-content>
+  </ion-content>
+</ion-app>

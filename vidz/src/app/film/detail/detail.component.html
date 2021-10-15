@@ -14,8 +14,13 @@
       </ion-card-content>
       <ion-card-content>
         <ion-card-subtitle>Directeur : {{ film.directors }}</ion-card-subtitle>
-        <ion-card-subtitle>Stars : {{ film.stars }}</ion-card-subtitle>
         <ion-card-subtitle>Compagnies :  {{ film.companies }}</ion-card-subtitle>
+      </ion-card-content>
+      <ion-card-content>
+        <ion-card-subtitle>Stars</ion-card-subtitle>
+        <ion-item *ngFor='let acteur of acteurs' routerLink="/acteur/detail/{{ acteur.id }}">
+          <ion-label>{{ acteur.name }}</ion-label>  
+        </ion-item>
       </ion-card-content>
     </ion-card>
   </ion-content>

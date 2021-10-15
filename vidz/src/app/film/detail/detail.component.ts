@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FilmService } from 'src/app/services/film.service';
 import { Film } from 'src/app/models/film';
+import { Acteur } from 'src/app/models/acteur';
 
 @Component({
   selector: 'app-detail',
@@ -14,7 +15,13 @@ export class DetailComponent implements OnInit {
    * je déclare ma variable fiml pour stocker mon film
    * @films
    */
-   private film!: Film;
+   private film: Film = {} as Film;
+
+   /**
+    * je déclare ma variable acteurs pour stocker les acteurs qui on participer au film
+    * @acteurs
+    */
+  private acteurs: Acteur[] = [];
 
 /**
    * on injecte FilmService pour utiliser c methode
@@ -31,6 +38,7 @@ export class DetailComponent implements OnInit {
     this.filmService.getFilm(id)
       .subscribe((result) => 
       {
+        this.acteurs = result['starList']
         this.film = result;
       })
   }

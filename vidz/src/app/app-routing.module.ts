@@ -19,6 +19,11 @@ const routes: Routes = [
     path: 'film',
     loadChildren: () => import('./film/film.module').then( m => m.FilmPageModule)
   },
+  {
+    path: 'acteur',
+    loadChildren: () => import('./acteur/acteur.module').then( m => m.ActeurPageModule)
+  }
+
 ];
 
 @NgModule({

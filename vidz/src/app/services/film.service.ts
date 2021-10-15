@@ -19,7 +19,7 @@ export class FilmService {
    * je déclare mon api keys pour pouvoir la changer quand je fait plus de 100 request 
    * @APIKEYS
    */
-  private APIKEYS = "k_rjbzywnu";
+  private APIKEYS = "k_in84pj7w";
 
   /**
    * on injecte http pour utiliser c methode pour faire des requests et on injecte router pour recup 
